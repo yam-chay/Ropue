@@ -449,6 +449,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5371962013526717050, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9167414
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371962013526717050, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.45792413
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371962013526717050, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465030203773615888, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465030203773615888, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_Size.y
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465030203773615888, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6502882082335734388, guid: 770df946abbf1e84e8fabfa294471f9b, type: 3}
+    - target: {fileID: 5465030203773615888, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465030203773615888, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465030203773615888, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465030203773615888, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7972135533969262825, guid: 2727e3ed0bd2faa46a49b8ecdd8681da, type: 3}
       propertyPath: m_Name
       value: Player
