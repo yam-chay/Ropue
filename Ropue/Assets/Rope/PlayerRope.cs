@@ -15,6 +15,7 @@ public class PlayerRope : MonoBehaviour
     private GameObject disregard;
     private Rigidbody2D rb;
     private HingeJoint2D hj;
+    private bool isStartAttach = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,7 +34,10 @@ public class PlayerRope : MonoBehaviour
             }
             else
             {
-                transform.Translate(horizontal, 0, 0);
+                if (!isStartAttach)
+                {
+                    transform.Translate(horizontal, 0, 0);
+                }
             }
         }
         if (Input.GetKey(KeyCode.D))
@@ -41,10 +45,14 @@ public class PlayerRope : MonoBehaviour
             if (attached)
             {
                 rb.AddRelativeForce(new Vector3(1, 0, 0) * pushForce);
+               
             }
             else
             {
-                transform.Translate(horizontal, 0, 0);
+                if (!isStartAttach)
+                {
+                    transform.Translate(horizontal, 0, 0);
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.W) && attached)
@@ -72,6 +80,7 @@ public class PlayerRope : MonoBehaviour
     }
     public void Attach(Rigidbody2D ropeBone)
     {
+        isStartAttach = true;
         ropeBone.gameObject.GetComponent<RopeSegment>().isPlayerAttached = true;
         hj.connectedBody = ropeBone;
         hj.enabled = true;
