@@ -53,7 +53,8 @@ MonoBehaviour:
   - {fileID: 8689311262574211031, guid: 6227bbfd3505b7c4aa4026bfd440f964, type: 3}
   - {fileID: 1034922083153095888, guid: 9dc4723dfad906a45b909b75685ee51b, type: 3}
   - {fileID: 1554878385303392782, guid: c060df09e7bdf7541bf6c3c059c41e5f, type: 3}
-  numLinks: 6
+  numLinks: 8
+  endSegRope: {fileID: 5620545399088111590, guid: a864f4410fdbe76469d496b39b995c30, type: 3}
 --- !u!1 &8867161771583532507
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +131,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.74, y: 2.16}
+  m_ConnectedAnchor: {x: 3.0805626, y: 3.7}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0

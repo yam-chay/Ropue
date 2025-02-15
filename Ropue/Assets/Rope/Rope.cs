@@ -7,6 +7,7 @@ public class Rope : MonoBehaviour
     [SerializeField] Rigidbody2D hook;
     [SerializeField] GameObject[] prefabRopeSegs;
     [SerializeField] int numLinks;
+    [SerializeField] GameObject endSegRope;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -23,14 +24,19 @@ public class Rope : MonoBehaviour
         {
             int index = Random.Range(0, prefabRopeSegs.Length);
             GameObject newSeg = Instantiate(prefabRopeSegs[index]);
+            if(numLinks -1 == i)
+            {
+                Destroy(newSeg);
+                newSeg = Instantiate(endSegRope);
+            }
             newSeg.transform.parent = transform;
             newSeg.transform.position = transform.position;
             HingeJoint2D hj = newSeg.GetComponent<HingeJoint2D>();
             hj.connectedBody = prevBod;
-
             prevBod = newSeg.GetComponent<Rigidbody2D>();
         }
     }
+    
     // Update is called once per frame
     void Update()
     {
