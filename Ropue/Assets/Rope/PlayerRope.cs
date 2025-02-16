@@ -80,6 +80,10 @@ public class PlayerRope : MonoBehaviour
     }
     public void Attach(Rigidbody2D ropeBone)
     {
+        if(isStartAttach == true)
+        { 
+        rb.AddRelativeForce(new Vector2(rb.velocity.x * 100, rb.velocity.y));
+        }
         isStartAttach = true;
         ropeBone.gameObject.GetComponent<RopeSegment>().isPlayerAttached = true;
         hj.connectedBody = ropeBone;
@@ -94,7 +98,7 @@ public class PlayerRope : MonoBehaviour
         hj.enabled = false;
         hj.connectedBody = null;
         StartCoroutine(AttachedNull());
-        rb.AddRelativeForce(new Vector2(rb.velocity.x * detachForce, rb.velocity.y * (detachForce + 60)));
+        rb.AddRelativeForce(new Vector2(rb.velocity.x * detachForce, rb.velocity.y * (detachForce + 30)));
     }
     IEnumerator AttachedNull()
     {
