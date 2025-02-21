@@ -12,6 +12,7 @@ public class PlayerRope : MonoBehaviour
     [SerializeField] GameObject pulleySelected = null;
     [SerializeField] float jumpForce;
     [SerializeField] bool isGround = false;
+    [SerializeField] private GameObject startPlatform;
     private GameObject disregard;
     private Rigidbody2D rb;
     private HingeJoint2D hj;
@@ -22,10 +23,21 @@ public class PlayerRope : MonoBehaviour
         hj = GetComponent<HingeJoint2D>();
     }
     // Start is called before the first frame update
-    
+    public bool IsStopMoving()
+    {
+        if ((rb.velocity == Vector2.zero && isGround == false && attached == false))
+        {
+            return true;
+        }
+        return false;
+    }
     void CheckKeyboardInputs()
     {
         float horizontal = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+        if (attached)
+        {
+            Destroy(startPlatform);
+        }
         if (Input.GetKey(KeyCode.A))
         {
             if (attached)
@@ -57,6 +69,7 @@ public class PlayerRope : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W) && attached)
         {
+           
             if (attached)
             {
                 Slide(1);
