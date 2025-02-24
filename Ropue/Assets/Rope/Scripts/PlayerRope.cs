@@ -10,6 +10,7 @@ public class PlayerRope : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float detachForce;
     [SerializeField] GameObject pulleySelected = null;
+    [SerializeField] GameObject paraTest;
     [SerializeField] float jumpForce;
     [SerializeField] bool isGround = false;
     [SerializeField] private GameObject startPlatform;
@@ -90,6 +91,10 @@ public class PlayerRope : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) &&  isGround == true)
         {
             Jump();
+        }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(paraTest, new Vector2(transform.position.x, 0), Quaternion.identity);
         }
     }
     public void Attach(Rigidbody2D ropeBone)
