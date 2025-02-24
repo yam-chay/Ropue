@@ -271,6 +271,14 @@ PrefabInstance:
       value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 8117946890512356113, guid: 52ee3fc7ab4565e4f9f6ae0bb1016959, type: 3}
+      propertyPath: jumpForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117946890512356113, guid: 52ee3fc7ab4565e4f9f6ae0bb1016959, type: 3}
+      propertyPath: pushForce
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117946890512356113, guid: 52ee3fc7ab4565e4f9f6ae0bb1016959, type: 3}
       propertyPath: startPlatform
       value: 
       objectReference: {fileID: 424145876}
@@ -2234,7 +2242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -174.99997}
+  m_AnchoredPosition: {x: 0, y: -175}
   m_SizeDelta: {x: 100, y: -350}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &779413577
@@ -3765,7 +3773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.3095093, y: 0.73638916}
+  m_AnchoredPosition: {x: -1.3095703, y: 0.73638916}
   m_SizeDelta: {x: 94.1738, y: 52.9589}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263760817

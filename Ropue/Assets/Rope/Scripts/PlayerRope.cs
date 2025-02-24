@@ -60,7 +60,7 @@ public class PlayerRope : MonoBehaviour
                 rb.AddRelativeForce(new Vector3(1, 0, 0) * pushForce);
                
             }
-            else
+            else if (!isStartAttach)
             {
                 if (!isStartAttach)
                 {
@@ -151,7 +151,7 @@ public class PlayerRope : MonoBehaviour
     }
     private void Jump()
     {
-        rb.velocity = Vector2.up * jumpForce;
+        rb.velocity *= rb.velocity.normalized * jumpForce;
         isGround = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
