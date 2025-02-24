@@ -17,6 +17,7 @@ public class PlayerRope : MonoBehaviour
     private Rigidbody2D rb;
     private HingeJoint2D hj;
     private bool isStartAttach = false;
+    private int coins = 10;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

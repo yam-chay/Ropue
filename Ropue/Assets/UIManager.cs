@@ -2,15 +2,30 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class GameManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text meterText , scoreText;
-    [SerializeField] private GameObject losePanel , StorePanel; 
+    [SerializeField] private TMP_Text meterText , scoreText , explainText , costText;
+    [SerializeField] private GameObject losePanel , StorePanel, upgradePanel;
     private PlayerRope player;
     bool onlyone = true ;
+    private Upgrade upgrade;
+    [SerializeField] Image showUpgradeImage;
+    private int cost;
     void Start()
     {
         player = FindAnyObjectByType<PlayerRope>();
+        
+    }
+    public void UpgradeButton(Upgrade upgrade)
+    {
+        if(upgrade.enabled == false)
+        {
+            upgrade.gameObject.SetActive(true);
+        }
+        cost = upgrade.cost;
+        showUpgradeImage.sprite = upgrade.image;
+        explainText.text = upgrade.Explain;
+        costText.text = ($"Cost:{upgrade.cost}");
     }
     public void Restart()
     {
