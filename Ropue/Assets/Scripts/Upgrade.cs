@@ -7,7 +7,7 @@ public class Upgrade : MonoBehaviour
 {
     [TextArea(5,5)]
     public string Explain;
-    public Sprite image;
+    public Sprite sprite;
     public int cost;
-   
+    public UpgradeState state;
 }

@@ -18,16 +18,17 @@ public class PlayerRope : MonoBehaviour
     private Rigidbody2D rb;
     private HingeJoint2D hj;
     private bool isStartAttach = false;
-    private int coins = 10;
+    public int Coins { get; set; }
     private void Awake()
     {
+        Coins = 10000;
         rb = GetComponent<Rigidbody2D>();
         hj = GetComponent<HingeJoint2D>();
     }
     // Start is called before the first frame update
     public bool IsStopMoving()
     {
-        if ((rb.velocity == Vector2.zero && isGround == false && attached == false))
+        if ((rb.velocity == Vector2.zero && isGround == false && isStartAttach == true && attached == false))
         {
             return true;
         }
