@@ -21,7 +21,7 @@ public class PlayerRope : MonoBehaviour
     public int Coins { get; set; }
     private void Awake()
     {
-        Coins = 10000;
+        Coins = 500;
         rb = GetComponent<Rigidbody2D>();
         hj = GetComponent<HingeJoint2D>();
     }
@@ -64,10 +64,7 @@ public class PlayerRope : MonoBehaviour
             }
             else if (!isStartAttach)
             {
-                if (!isStartAttach)
-                {
                     transform.Translate(horizontal, 0, 0);
-                }
             }
         }
         if (Input.GetKeyDown(KeyCode.W) && attached)
@@ -89,10 +86,7 @@ public class PlayerRope : MonoBehaviour
         {
             Detach();
         }
-        if(Input.GetKeyDown(KeyCode.Space) &&  isGround == true)
-        {
-            Jump();
-        }
+       
         if(Input.GetKeyDown(KeyCode.E))
         {
             Instantiate(paraTest, new Vector2(transform.position.x, 0), Quaternion.identity);
@@ -100,11 +94,9 @@ public class PlayerRope : MonoBehaviour
     }
     public void Attach(Rigidbody2D ropeBone)
     {
-        if(isStartAttach == true)
-        { 
-        rb.AddRelativeForce(new Vector2(rb.velocity.x * 100, rb.velocity.y));
-        }
-        isStartAttach = true;
+        isStartAttach = true;  
+        isGround = false;
+        rb.AddForce(new Vector2(rb.velocity.x * 20, rb.velocity.y));
         ropeBone.gameObject.GetComponent<RopeSegment>().isPlayerAttached = true;
         hj.connectedBody = ropeBone;
         hj.enabled = true;
@@ -118,7 +110,8 @@ public class PlayerRope : MonoBehaviour
         hj.enabled = false;
         hj.connectedBody = null;
         StartCoroutine(AttachedNull());
-        rb.AddRelativeForce(new Vector2(rb.velocity.x * detachForce, rb.velocity.y * (detachForce + 30)));
+        Vector2 velocity = rb.velocity.normalized;
+        rb.AddForce(new Vector2(velocity.x * detachForce, Mathf.Abs(velocity.y) * (detachForce/3)), ForceMode2D.Impulse);
     }
     IEnumerator AttachedNull()
     {

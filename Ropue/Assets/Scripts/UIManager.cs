@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
     }
     public void UpgradeButtonInfo(Upgrade upgrade)
     {
+        this.upgrade = upgrade;
         upgradePanel.gameObject.SetActive(true);
         cost = upgrade.cost;
         showUpgradeImage.sprite = upgrade.sprite;
@@ -42,7 +43,7 @@ public class UIManager : MonoBehaviour
             switch (upgradeState)
             { 
                 case UpgradeState.Bounciness:
-                    physicsMaterial.bounciness -= 0.1f;
+                    physicsMaterial.bounciness += 0.1f;
                     break;
                          case UpgradeState.Volcano:
                     // add volcano force
@@ -58,6 +59,9 @@ public class UIManager : MonoBehaviour
                     break;
             }
             player.Coins -= cost;
+            upgrade.cost += 400;
+            costText.text = ($"Cost:{upgrade.cost}");
+
         }
         else
         {
