@@ -94,5 +94,17 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         meterText.text = ($"{Mathf.Round(Mathf.Clamp(player.transform.position.x, 0, 99999))}M");
+        switch (player.transform.position.x)
+        {
+            case < 100:
+                meterText.color = Color.white;
+                break;
+            case < 200:
+                meterText.color = new Color(1, 1, 0, 1);
+                break;
+            case > 300:
+                meterText.color = new Color(1, 0, 0, 1);
+                break;
+        }
     }
 }
