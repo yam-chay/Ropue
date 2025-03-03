@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4620819560341531584}
   - component: {fileID: 8500229903778328078}
   - component: {fileID: 8117946890512356113}
+  - component: {fileID: 517414823922135390}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -207,3 +208,18 @@ MonoBehaviour:
   jumpForce: 3
   isGround: 1
   startPlatform: {fileID: 0}
+--- !u!114 &517414823922135390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3928955098045865550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eaf1b878cb08ad46926decd75aeb3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoadObject:
+  - {fileID: 8193517855067638108, guid: cd704e7725c1db44f81f2e492fc67c53, type: 3}
+  - {fileID: 6577153756276933629, guid: c45dc28894515454b860a2552cda0b43, type: 3}

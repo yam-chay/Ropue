@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - RoadObject
   - Parallax
+  - Trampoline
+  - Volcano
   layers:
   - Default
   - TransparentFX
