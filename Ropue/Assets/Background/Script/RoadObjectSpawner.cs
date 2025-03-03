@@ -47,8 +47,8 @@ public class RoadObjectSpawner : MonoBehaviour
                 }
 
                 Instantiate(RoadObject[index], spawnPoint, Quaternion.identity);
-                yield return new WaitForSeconds(minSpawnTimeDelay);
             }
+            yield return new WaitForSeconds(minSpawnTimeDelay);
         }
     }
 }
