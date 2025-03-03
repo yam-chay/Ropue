@@ -40,7 +40,7 @@ public class RoadObjectSpawner : MonoBehaviour
 
                 else if (RoadObject[index].CompareTag("Volcano"))
                 {
-                    spawnPoint = new Vector2(transform.position.x + 12, 0);
+                    spawnPoint = new Vector2(transform.position.x + 12, -2);
                 }
                 
                 else if (RoadObject[index].CompareTag("Rope"))
