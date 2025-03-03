@@ -86,11 +86,6 @@ public class PlayerRope : MonoBehaviour
         {
             Detach();
         }
-       
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Instantiate(paraTest, new Vector2(transform.position.x, 0), Quaternion.identity);
-        }
     }
     public void Attach(Rigidbody2D ropeBone)
     {

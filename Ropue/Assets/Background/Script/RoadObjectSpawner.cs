@@ -1,44 +1,39 @@
-using System.Runtime.CompilerServices;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RoadObjectSpawner : MonoBehaviour
 {
-    [SerializeField] private Vector2 spawnPoint;
-    [SerializeField] private Transform parallaxParent;
+    [SerializeField] private GameObject[] RoadObject;
+    [SerializeField] private Transform playerTransform;
+    private Vector2 spawnPoint;
     private bool isSpawn;
-    private float spawnTime;
     private float spawnTimeLimit;
 
-    void Start()
+    void Awake()
     {
-        Debug.Log($"transform.position " + transform.position);
-        spawnPoint = transform.position + new Vector3(5, -4);
-        spawnTimeLimit = 1;
+        spawnTimeLimit = 4;
         isSpawn = true;
-        GameObject para = GameObject.FindGameObjectWithTag("Parallax");
-        parallaxParent = para.transform;
-        gameObject.transform.SetParent(parallaxParent);
-        transform.position = spawnPoint;
-        Debug.Log($"transform.position " + transform.position);
+    }
 
+    private void Start()
+    {
+        StartCoroutine(SpawnRoadObjects());
     }
 
     void Update()
     {
-        if (isSpawn)
-        {
-            spawnTime += Time.deltaTime;
-            if (spawnTime >= spawnTimeLimit)
-            {
-                isSpawn = false;
-            }
-        }    
+        
+    }
 
-        if (transform.position.x >= spawnPoint.x + 7)
+    private IEnumerator SpawnRoadObjects()
+    {
+        while (isSpawn)
         {
-            Destroy(gameObject);
+            spawnPoint = new Vector2(playerTransform.position.x + 12, -4);
+            var index = Random.Range(0, RoadObject.Length);
+            Instantiate(RoadObject[index], spawnPoint, Quaternion.identity);
+            yield return new WaitForSeconds(spawnTimeLimit);
         }
+
     }
 }

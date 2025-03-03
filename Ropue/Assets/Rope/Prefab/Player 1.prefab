@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8117946890512356113}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,12 +197,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a856bbf870cf290409d7315d97f604c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 3
+  pushForce: 9
   attached: 0
   attachedTo: {fileID: 0}
   moveSpeed: 10
-  detachForce: 50
+  detachForce: 20
   pulleySelected: {fileID: 0}
-  jumpForce: 8
-  isGround: 0
+  paraTest: {fileID: 7576501285639303240, guid: 04cafbd1ea24e5947bab687c6cbc67cc, type: 3}
+  jumpForce: 3
+  isGround: 1
   startPlatform: {fileID: 0}
