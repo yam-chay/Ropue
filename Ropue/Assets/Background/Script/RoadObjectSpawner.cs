@@ -1,13 +1,10 @@
 using System.Collections;
-using System.Diagnostics;
-using UnityEditor;
 using UnityEngine;
 
 public class RoadObjectSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] RoadObject;
+    public GameObject[] RoadObject;
     [SerializeField] private Vector2 spawnPoint;
-    private Vector2 lastObjectSpawnPoint;
     private bool isSpawn;
     private int minSpawnTimeDelay;
 
@@ -44,6 +41,11 @@ public class RoadObjectSpawner : MonoBehaviour
                 else if (RoadObject[index].CompareTag("Volcano"))
                 {
                     spawnPoint = new Vector2(transform.position.x + 12, 0);
+                }
+                
+                else if (RoadObject[index].CompareTag("Rope"))
+                {
+                    spawnPoint = new Vector2(transform.position.x + 12, 4);
                 }
 
                 Instantiate(RoadObject[index], spawnPoint, Quaternion.identity);
