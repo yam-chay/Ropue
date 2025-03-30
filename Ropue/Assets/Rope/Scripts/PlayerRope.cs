@@ -21,7 +21,7 @@ public class PlayerRope : MonoBehaviour
     public int Coins { get; set; }
     private void Awake()
     {
-        Coins = 500;
+        Coins = 200;
         rb = GetComponent<Rigidbody2D>();
         hj = GetComponent<HingeJoint2D>();
     }
